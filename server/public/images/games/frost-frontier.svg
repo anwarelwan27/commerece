@@ -1,0 +1,19 @@
+<svg width="720" height="960" viewBox="0 0 720 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="960" rx="48" fill="#08131D"/>
+  <rect width="720" height="960" rx="48" fill="url(#paint0_linear)"/>
+  <circle cx="530" cy="210" r="150" fill="#E0F2FE" fill-opacity="0.18"/>
+  <path d="M160 520L300 350L410 470L560 300" stroke="#E2E8F0" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.75"/>
+  <path d="M130 650H590" stroke="#94A3B8" stroke-width="10" stroke-linecap="round" opacity="0.45"/>
+  <rect x="72" y="92" width="226" height="42" rx="21" fill="#0F172A" fill-opacity="0.55"/>
+  <text x="96" y="120" fill="#E0F2FE" font-size="24" font-family="Arial, sans-serif">OPEN ADVENTURE</text>
+  <text x="72" y="770" fill="white" font-size="62" font-weight="700" font-family="Arial, sans-serif">FROST</text>
+  <text x="72" y="850" fill="#BFDBFE" font-size="62" font-weight="700" font-family="Arial, sans-serif">FRONTIER</text>
+  <text x="72" y="900" fill="#E2E8F0" font-size="28" font-family="Arial, sans-serif">Brave the cold and uncover the buried truth.</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="90" y1="90" x2="640" y2="910" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="0.5" stop-color="#0F4C81"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+</svg>

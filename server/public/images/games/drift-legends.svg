@@ -1,0 +1,19 @@
+<svg width="720" height="960" viewBox="0 0 720 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="960" rx="48" fill="#09101B"/>
+  <rect width="720" height="960" rx="48" fill="url(#paint0_linear)"/>
+  <path d="M128 640C208 580 288 548 368 544C478 538 548 598 620 504" stroke="#F8FAFC" stroke-width="26" stroke-linecap="round" opacity="0.45"/>
+  <path d="M96 720C176 660 256 628 336 624C446 618 516 678 588 584" stroke="#38BDF8" stroke-width="14" stroke-linecap="round" opacity="0.75"/>
+  <circle cx="520" cy="260" r="165" fill="#38BDF8" fill-opacity="0.18"/>
+  <rect x="72" y="92" width="220" height="42" rx="21" fill="#0F172A" fill-opacity="0.55"/>
+  <text x="96" y="120" fill="#BAE6FD" font-size="24" font-family="Arial, sans-serif">ARCADE RACING</text>
+  <text x="72" y="770" fill="white" font-size="68" font-weight="700" font-family="Arial, sans-serif">DRIFT</text>
+  <text x="72" y="850" fill="#7DD3FC" font-size="68" font-weight="700" font-family="Arial, sans-serif">LEGENDS</text>
+  <text x="72" y="900" fill="#E2E8F0" font-size="28" font-family="Arial, sans-serif">Own the corners and leave a trail of sparks.</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="60" y1="90" x2="660" y2="910" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="0.45" stop-color="#1D4ED8"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+</svg>

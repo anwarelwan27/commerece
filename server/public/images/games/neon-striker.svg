@@ -1,0 +1,20 @@
+<svg width="720" height="960" viewBox="0 0 720 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="960" rx="48" fill="#0B1020"/>
+  <rect width="720" height="960" rx="48" fill="url(#paint0_linear)"/>
+  <circle cx="160" cy="190" r="150" fill="#F43F5E" fill-opacity="0.28"/>
+  <circle cx="610" cy="690" r="180" fill="#F59E0B" fill-opacity="0.24"/>
+  <rect x="108" y="240" width="504" height="18" rx="9" fill="#F8FAFC" fill-opacity="0.65" transform="rotate(-16 108 240)"/>
+  <rect x="154" y="392" width="430" height="12" rx="6" fill="#FB7185" fill-opacity="0.8" transform="rotate(-16 154 392)"/>
+  <rect x="88" y="92" width="168" height="42" rx="21" fill="#111827" fill-opacity="0.55"/>
+  <text x="112" y="120" fill="#FDE68A" font-size="24" font-family="Arial, sans-serif">ARENA FPS</text>
+  <text x="72" y="770" fill="white" font-size="72" font-weight="700" font-family="Arial, sans-serif">NEON</text>
+  <text x="72" y="850" fill="#FDBA74" font-size="72" font-weight="700" font-family="Arial, sans-serif">STRIKER</text>
+  <text x="72" y="900" fill="#E5E7EB" font-size="28" font-family="Arial, sans-serif">Outplay rivals in a light-speed firefight.</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="50" y1="80" x2="670" y2="930" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="0.45" stop-color="#3B0764"/>
+      <stop offset="1" stop-color="#1F2937"/>
+    </linearGradient>
+  </defs>
+</svg>

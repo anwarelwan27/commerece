@@ -1,0 +1,19 @@
+<svg width="720" height="960" viewBox="0 0 720 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="960" rx="48" fill="#0B1120"/>
+  <rect width="720" height="960" rx="48" fill="url(#paint0_linear)"/>
+  <circle cx="560" cy="220" r="170" fill="#FDE68A" fill-opacity="0.2"/>
+  <path d="M360 180L480 450H240L360 180Z" fill="#F8FAFC" fill-opacity="0.18"/>
+  <path d="M360 140L520 510H200L360 140Z" stroke="#EAB308" stroke-width="12" stroke-linejoin="round" opacity="0.6"/>
+  <rect x="72" y="92" width="188" height="42" rx="21" fill="#0F172A" fill-opacity="0.55"/>
+  <text x="96" y="120" fill="#FEF3C7" font-size="24" font-family="Arial, sans-serif">EPIC RPG</text>
+  <text x="72" y="770" fill="white" font-size="68" font-weight="700" font-family="Arial, sans-serif">MYTHIC</text>
+  <text x="72" y="850" fill="#FDE68A" font-size="68" font-weight="700" font-family="Arial, sans-serif">ARENA</text>
+  <text x="72" y="900" fill="#E2E8F0" font-size="28" font-family="Arial, sans-serif">Forge heroes. Master relics. Claim the crown.</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="100" y1="100" x2="620" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#172554"/>
+      <stop offset="0.5" stop-color="#111827"/>
+      <stop offset="1" stop-color="#2A1A5E"/>
+    </linearGradient>
+  </defs>
+</svg>
