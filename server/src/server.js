@@ -11,7 +11,7 @@ const startServer = async () => {
     connection.release();
 
     app.listen(PORT, () => {
-      console.log(`ClickMart API server listening on port ${PORT}`);
+      console.log(`TechNova Store API server listening on port ${PORT}`);
     });
   } catch (error) {
     console.error("Unable to connect to MySQL. Please check your database settings.");

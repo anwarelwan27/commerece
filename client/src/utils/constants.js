@@ -1,50 +1,47 @@
-export const GAME_CATEGORIES = [
+export const PRODUCT_CATEGORIES = [
   "All",
-  "Action",
-  "Adventure",
-  "Indie",
-  "Racing",
-  "RPG",
-  "Shooter",
-  "Stealth",
-  "Strategy",
+  "Laptops",
+  "Mobile Phones",
+  "Headphones",
+  "Keyboards",
+  "Mice",
 ];
 
 export const FEATURE_HIGHLIGHTS = [
   {
-    title: "Smart Discovery",
-    description: "Live search, category filters, and price controls help players find the right game faster.",
+    title: "Real-Time Product Discovery",
+    description: "Search products instantly, narrow the catalog by category, and control the price range with clean UI feedback.",
   },
   {
-    title: "Responsive Everywhere",
-    description: "ClickMart is designed mobile-first and scales smoothly from phones to large desktop screens.",
+    title: "Responsive Across Every Screen",
+    description: "TechNova uses a mobile-first layout that scales smoothly from compact phones to wide desktop monitors.",
   },
   {
-    title: "Modern Checkout Flow",
-    description: "Secure login, editable cart quantities, helpful toasts, and clean error handling keep the journey smooth.",
+    title: "Modern Cart and Checkout Flow",
+    description: "Protected routes, editable cart quantities, toast notifications, and order placement make the project feel production-ready.",
   },
 ];
 
-export const CONTACT_CHANNELS = [
+export const STORE_METRICS = [
   {
-    title: "Support Hub",
-    value: "support@clickmart.com",
-    description: "For orders, login issues, and account help.",
+    title: "Fast Shipping",
+    value: "24h Dispatch",
+    description: "Orders are prepared quickly with tracked delivery and store pickup support.",
   },
   {
-    title: "Community Desk",
-    value: "discord.gg/clickmart",
-    description: "Share feedback, request features, and join events.",
+    title: "Curated Catalog",
+    value: "5 Categories",
+    description: "Only modern essentials for work, learning, and entertainment.",
   },
   {
-    title: "Press & Partners",
-    value: "partners@clickmart.com",
-    description: "For collaborations, bundles, and business inquiries.",
+    title: "Trusted Ratings",
+    value: "4.8 Avg",
+    description: "Top-rated picks are highlighted automatically from the database.",
   },
 ];
 
 export const TEAM_VALUES = [
-  "Curated digital experiences for every type of player",
-  "Fast browsing with polished UI and friendly feedback states",
-  "Accessible shopping flow built for learning and real-world use",
+  "Tech-focused shopping experience with clean modern visuals",
+  "Reusable components that are beginner-friendly and easy to explain",
+  "Full-stack architecture designed for a final project presentation",
 ];

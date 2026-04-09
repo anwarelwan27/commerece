@@ -14,7 +14,7 @@ const buildSortClause = (sort) => {
   }
 };
 
-const getAllGames = async ({
+const getAllProducts = async ({
   search = "",
   category = "",
   minPrice,
@@ -22,7 +22,7 @@ const getAllGames = async ({
   sort = "rating",
 }) => {
   let sql =
-    "SELECT id, title, price, image, category, rating, description FROM games WHERE 1 = 1";
+    "SELECT id, title, price, image, category, rating, description FROM products WHERE 1 = 1";
   const params = [];
 
   if (search) {
@@ -51,26 +51,27 @@ const getAllGames = async ({
   return rows;
 };
 
-const getGameById = async (id) => {
+const getProductById = async (id) => {
   const [rows] = await db.query(
-    "SELECT id, title, price, image, category, rating, description FROM games WHERE id = ? LIMIT 1",
+    "SELECT id, title, price, image, category, rating, description FROM products WHERE id = ? LIMIT 1",
     [id]
   );
 
   return rows[0] || null;
 };
 
-const getTopRatedGames = async (limit = 4) => {
+const getTopRatedProducts = async (limit = 4) => {
+  const normalizedLimit = Number.isFinite(limit) && limit > 0 ? limit : 4;
   const [rows] = await db.query(
-    "SELECT id, title, price, image, category, rating, description FROM games ORDER BY rating DESC, id DESC LIMIT ?",
-    [limit]
+    "SELECT id, title, price, image, category, rating, description FROM products ORDER BY rating DESC, id DESC LIMIT ?",
+    [normalizedLimit]
   );
 
   return rows;
 };
 
 module.exports = {
-  getAllGames,
-  getGameById,
-  getTopRatedGames,
+  getAllProducts,
+  getProductById,
+  getTopRatedProducts,
 };

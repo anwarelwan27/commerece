@@ -48,8 +48,8 @@ function CartPage() {
     <>
       <PageHeader
         eyebrow="Your Cart"
-        title="Review your games, adjust quantities, and continue to checkout."
-        description="The cart stays dynamic with editable quantities, instant totals, and smooth feedback for every action."
+        title="Review your devices, adjust quantities, and move smoothly to checkout."
+        description="The TechNova cart updates in real time with editable quantities, instant totals, and clear action feedback."
       />
 
       <section className="section-shell pb-16">
@@ -58,9 +58,9 @@ function CartPage() {
         {!isCartLoading && items.length === 0 ? (
           <EmptyState
             title="Your cart is empty."
-            description="Start browsing the catalog and add a few titles to continue to checkout."
-            actionLabel="Browse Games"
-            actionTo="/games"
+            description="Start browsing the catalog and add a few products to continue to checkout."
+            actionLabel="Browse Products"
+            actionTo="/products"
           />
         ) : null}
 
@@ -150,11 +150,11 @@ function CartPage() {
 
               <div className="mt-8 space-y-4">
                 <div className="flex items-center justify-between text-sm text-[color:var(--text-secondary)]">
-                  <span>Games in cart</span>
+                  <span>Products in cart</span>
                   <span>{summary.itemCount}</span>
                 </div>
                 <div className="flex items-center justify-between text-sm text-[color:var(--text-secondary)]">
-                  <span>Digital delivery</span>
+                  <span>Shipping</span>
                   <span>Free</span>
                 </div>
                 <div className="flex items-center justify-between text-sm text-[color:var(--text-secondary)]">
@@ -177,7 +177,7 @@ function CartPage() {
                 <Link to="/checkout" className="primary-button w-full justify-center">
                   Continue to Checkout
                 </Link>
-                <Link to="/games" className="secondary-button w-full justify-center">
+                <Link to="/products" className="secondary-button w-full justify-center">
                   Continue Shopping
                 </Link>
               </div>

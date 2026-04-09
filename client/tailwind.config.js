@@ -4,11 +4,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ["Orbitron", "sans-serif"],
+        display: ["Sora", "sans-serif"],
         body: ["Space Grotesk", "sans-serif"],
       },
       boxShadow: {
-        glow: "0 0 0 1px rgba(56, 189, 248, 0.18), 0 20px 60px rgba(14, 165, 233, 0.16)",
+        glow: "0 0 0 1px rgba(34, 211, 238, 0.18), 0 20px 60px rgba(6, 182, 212, 0.16)",
         card: "0 20px 50px rgba(15, 23, 42, 0.25)",
       },
       keyframes: {

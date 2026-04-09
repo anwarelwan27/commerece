@@ -5,7 +5,7 @@ const UserModel = require("../models/userModel");
 const createToken = (user) =>
   jwt.sign(
     { id: user.id, name: user.name, email: user.email },
-    process.env.JWT_SECRET || "clickmart-super-secret",
+    process.env.JWT_SECRET || "technova-super-secret",
     { expiresIn: "7d" }
   );
 

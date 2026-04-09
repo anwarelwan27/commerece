@@ -4,17 +4,17 @@ const cartJoinQuery = `
   SELECT
     cart.id,
     cart.user_id,
-    cart.game_id,
+    cart.product_id,
     cart.quantity,
-    games.title,
-    games.price,
-    games.image,
-    games.category,
-    games.rating,
-    games.description,
-    ROUND(cart.quantity * games.price, 2) AS line_total
+    products.title,
+    products.price,
+    products.image,
+    products.category,
+    products.rating,
+    products.description,
+    ROUND(cart.quantity * products.price, 2) AS line_total
   FROM cart
-  INNER JOIN games ON games.id = cart.game_id
+  INNER JOIN products ON products.id = cart.product_id
 `;
 
 const getCartByUserId = async (userId) => {
@@ -35,20 +35,20 @@ const getCartItemById = async (id, userId) => {
   return rows[0] || null;
 };
 
-const findItemByUserAndGame = async (userId, gameId) => {
+const findItemByUserAndProduct = async (userId, productId) => {
   const [rows] = await db.query(
-    "SELECT id, quantity FROM cart WHERE user_id = ? AND game_id = ? LIMIT 1",
-    [userId, gameId]
+    "SELECT id, quantity FROM cart WHERE user_id = ? AND product_id = ? LIMIT 1",
+    [userId, productId]
   );
 
   return rows[0] || null;
 };
 
-const addToCart = async ({ userId, gameId, quantity }) => {
-  const existingItem = await findItemByUserAndGame(userId, gameId);
+const addToCart = async ({ userId, productId, quantity }) => {
+  const existingItem = await findItemByUserAndProduct(userId, productId);
 
   if (existingItem) {
-    // Keep one cart row per game and increase its quantity when the user adds it again.
+    // Keep one cart row per product and increase its quantity when the user adds it again.
     await db.query("UPDATE cart SET quantity = quantity + ? WHERE id = ?", [
       quantity,
       existingItem.id,
@@ -58,8 +58,8 @@ const addToCart = async ({ userId, gameId, quantity }) => {
   }
 
   const [result] = await db.query(
-    "INSERT INTO cart (user_id, game_id, quantity) VALUES (?, ?, ?)",
-    [userId, gameId, quantity]
+    "INSERT INTO cart (user_id, product_id, quantity) VALUES (?, ?, ?)",
+    [userId, productId, quantity]
   );
 
   return getCartItemById(result.insertId, userId);

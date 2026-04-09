@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import {
-  Gamepad2,
+  Cpu,
   LogIn,
   LogOut,
   Menu,
   Moon,
-  ShoppingBag,
+  ShoppingCart,
   SunMedium,
   UserPlus,
   X,
@@ -18,9 +18,8 @@ import { combineClasses } from "../../utils/helpers";
 
 const navLinks = [
   { label: "Home", to: "/" },
-  { label: "Games", to: "/games" },
-  { label: "About", to: "/about" },
-  { label: "Contact", to: "/contact" },
+  { label: "Products", to: "/products" },
+  { label: "Cart", to: "/cart" },
 ];
 
 function Navbar() {
@@ -45,7 +44,7 @@ function Navbar() {
         combineClasses(
           "rounded-full px-4 py-2 text-sm font-medium transition duration-200",
           isActive
-            ? "bg-sky-400/20 text-sky-200"
+            ? "bg-cyan-400/20 text-cyan-200"
             : "text-[color:var(--text-secondary)] hover:bg-white/10 hover:text-[color:var(--text-primary)]"
         )
       }
@@ -62,13 +61,13 @@ function Navbar() {
             to="/"
             className="flex items-center gap-3 text-[color:var(--text-primary)]"
           >
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-400/20 text-sky-300 shadow-glow">
-              <Gamepad2 size={22} />
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-400/15 text-cyan-300 shadow-glow">
+              <Cpu size={22} />
             </div>
             <div>
-              <p className="font-display text-lg tracking-[0.2em]">CLICKMART</p>
+              <p className="font-display text-lg tracking-[0.22em]">TECHNOVA</p>
               <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--text-muted)]">
-                Digital Games Store
+                Smart Electronics Store
               </p>
             </div>
           </NavLink>
@@ -92,9 +91,9 @@ function Navbar() {
               className="secondary-button relative !h-11 !w-11 !rounded-2xl !px-0 !py-0"
               aria-label="Cart"
             >
-              <ShoppingBag size={18} />
+              <ShoppingCart size={18} />
               {summary.itemCount > 0 ? (
-                <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-orange-400 px-1 text-[10px] font-bold text-white">
+                <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-cyan-400 px-1 text-[10px] font-bold text-slate-950">
                   {summary.itemCount}
                 </span>
               ) : null}
@@ -155,7 +154,7 @@ function Navbar() {
                 onClick={() => setIsMenuOpen(false)}
                 className="secondary-button"
               >
-                <ShoppingBag size={16} />
+                <ShoppingCart size={16} />
                 Cart ({summary.itemCount})
               </NavLink>
             </div>

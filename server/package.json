@@ -1,7 +1,7 @@
 {
-  "name": "clickmart-server",
+  "name": "technova-store-server",
   "version": "1.0.0",
-  "description": "Express and MySQL API for the ClickMart digital games store.",
+  "description": "Express and MySQL API for the TechNova Store electronics platform.",
   "main": "src/server.js",
   "scripts": {
     "dev": "nodemon src/server.js",

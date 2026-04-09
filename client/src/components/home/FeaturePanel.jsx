@@ -1,4 +1,4 @@
-import { FEATURE_HIGHLIGHTS } from "../../utils/constants";
+import { FEATURE_HIGHLIGHTS, TEAM_VALUES } from "../../utils/constants";
 import SectionHeading from "../common/SectionHeading";
 
 function FeaturePanel() {
@@ -7,8 +7,8 @@ function FeaturePanel() {
       <div className="surface-card p-6 sm:p-8">
         <SectionHeading
           eyebrow="Platform Strengths"
-          title="Built like a real-world e-commerce project, styled for players."
-          description="This project combines React, Express, and MySQL into a clean full-stack experience with authentication, filtering, cart logic, and polished presentation."
+          title="Built like a real-world store, presented with a sharp tech identity."
+          description="TechNova combines React, Express, and MySQL into a complete e-commerce experience with authentication, filtering, cart management, and polished presentation."
         />
 
         <div className="mt-8 grid gap-4 lg:grid-cols-3">
@@ -19,6 +19,14 @@ function FeaturePanel() {
               </p>
               <h3 className="text-xl font-semibold text-[color:var(--text-primary)]">{feature.title}</h3>
               <p className="mt-3 text-sm leading-7 text-[color:var(--text-secondary)]">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-8 grid gap-4 lg:grid-cols-3">
+          {TEAM_VALUES.map((value) => (
+            <div key={value} className="rounded-3xl border border-white/10 bg-white/5 px-5 py-4 text-sm text-[color:var(--text-secondary)]">
+              {value}
             </div>
           ))}
         </div>

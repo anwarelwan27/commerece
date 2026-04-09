@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 const ThemeContext = createContext(null);
-const THEME_STORAGE_KEY = "clickmart_theme";
+const THEME_STORAGE_KEY = "technova_theme";
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {

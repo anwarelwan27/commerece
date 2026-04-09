@@ -1,14 +1,14 @@
 import { Search, SlidersHorizontal } from "lucide-react";
-import { GAME_CATEGORIES } from "../../utils/constants";
+import { PRODUCT_CATEGORIES } from "../../utils/constants";
 
-function GameFilters({ filters, onFilterChange, onReset, resultsCount }) {
+function ProductFilters({ filters, onFilterChange, onReset, resultsCount }) {
   return (
     <div className="surface-card mb-8 p-5 sm:p-6">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="text-sm uppercase tracking-[0.25em] text-[color:var(--text-muted)]">Search & Filter</p>
           <p className="mt-2 text-lg font-semibold text-[color:var(--text-primary)]">
-            {resultsCount} games matched
+            {resultsCount} products matched
           </p>
         </div>
         <button type="button" className="secondary-button" onClick={onReset}>
@@ -18,24 +18,24 @@ function GameFilters({ filters, onFilterChange, onReset, resultsCount }) {
 
       <div className="grid gap-4 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr]">
         <label className="surface-muted flex items-center gap-3 px-4 py-3">
-          <Search size={18} className="text-sky-300" />
+          <Search size={18} className="text-cyan-300" />
           <input
             type="text"
             value={filters.search}
             onChange={(event) => onFilterChange("search", event.target.value)}
-            placeholder="Search games by title..."
+            placeholder="Search phones, laptops, accessories..."
             className="w-full bg-transparent text-sm text-[color:var(--text-primary)] outline-none placeholder:text-[color:var(--text-muted)]"
           />
         </label>
 
         <label className="surface-muted flex items-center gap-3 px-4 py-3">
-          <SlidersHorizontal size={18} className="text-sky-300" />
+          <SlidersHorizontal size={18} className="text-cyan-300" />
           <select
             value={filters.category}
             onChange={(event) => onFilterChange("category", event.target.value)}
             className="w-full bg-transparent text-sm text-[color:var(--text-primary)] outline-none"
           >
-            {GAME_CATEGORIES.map((category) => (
+            {PRODUCT_CATEGORIES.map((category) => (
               <option key={category} value={category}>
                 {category}
               </option>
@@ -76,4 +76,4 @@ function GameFilters({ filters, onFilterChange, onReset, resultsCount }) {
   );
 }
 
-export default GameFilters;
+export default ProductFilters;

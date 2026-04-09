@@ -4,8 +4,8 @@ export const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
 export const SERVER_BASE_URL = API_BASE_URL.replace(/\/api\/?$/, "");
 
-export const TOKEN_STORAGE_KEY = "clickmart_token";
-export const USER_STORAGE_KEY = "clickmart_user";
+export const TOKEN_STORAGE_KEY = "technova_token";
+export const USER_STORAGE_KEY = "technova_user";
 
 export const getStoredToken = () => localStorage.getItem(TOKEN_STORAGE_KEY);
 
@@ -57,10 +57,10 @@ export const authApi = {
   login: (payload) => apiClient.post("/auth/login", payload),
 };
 
-export const gamesApi = {
-  getAll: (params = {}) => apiClient.get("/games", { params }),
-  getById: (id) => apiClient.get(`/games/${id}`),
-  getTopRated: () => apiClient.get("/games/top-rated"),
+export const productsApi = {
+  getAll: (params = {}) => apiClient.get("/products", { params }),
+  getById: (id) => apiClient.get(`/products/${id}`),
+  getTopRated: (params = {}) => apiClient.get("/products/top-rated", { params }),
 };
 
 export const cartApi = {

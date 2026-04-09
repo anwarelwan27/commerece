@@ -16,7 +16,8 @@ function CheckoutPage() {
     country: "Egypt",
     city: "Cairo",
     address: "",
-    paymentMethod: "Instant digital delivery",
+    paymentMethod: "Cash on Delivery",
+    deliveryOption: "Standard Shipping",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [completedOrder, setCompletedOrder] = useState(null);
@@ -56,9 +57,9 @@ function CheckoutPage() {
       <section className="section-shell pb-16">
         <EmptyState
           title="No items available for checkout."
-          description="Add games to your cart first, then return here to place your order."
-          actionLabel="Browse Games"
-          actionTo="/games"
+          description="Add products to your cart first, then return here to place your order."
+          actionLabel="Browse Products"
+          actionTo="/products"
         />
       </section>
     );
@@ -68,8 +69,8 @@ function CheckoutPage() {
     <>
       <PageHeader
         eyebrow="Checkout"
-        title="Complete your order and receive your digital games instantly."
-        description="This page collects delivery details for the customer form requirement and finishes the order with a clean, beginner-friendly checkout flow."
+        title="Complete your order and send your setup to the finish line."
+        description="This checkout form collects customer delivery details and submits a real order to the backend using the cart data stored in MySQL."
       />
 
       <section className="section-shell pb-16">
@@ -83,8 +84,8 @@ function CheckoutPage() {
               Thanks, {formData.fullName.split(" ")[0]}.
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-8 text-[color:var(--text-secondary)]">
-              Your purchase has been recorded successfully. A digital confirmation would be sent to {formData.email} in a
-              real production environment.
+              Your purchase has been recorded successfully. In a real store, a confirmation would be sent to
+              {" "}{formData.email} with delivery tracking details.
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -161,16 +162,33 @@ function CheckoutPage() {
                     onChange={(event) => handleChange("address", event.target.value)}
                   />
                 </div>
-                <div className="sm:col-span-2">
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-[color:var(--text-secondary)]">
+                    Delivery Option
+                  </label>
+                  <select
+                    className="field"
+                    value={formData.deliveryOption}
+                    onChange={(event) => handleChange("deliveryOption", event.target.value)}
+                  >
+                    <option>Standard Shipping</option>
+                    <option>Express Shipping</option>
+                    <option>Store Pickup</option>
+                  </select>
+                </div>
+                <div>
                   <label className="mb-2 block text-sm font-medium text-[color:var(--text-secondary)]">
                     Payment Method
                   </label>
-                  <input
-                    type="text"
+                  <select
                     className="field"
                     value={formData.paymentMethod}
                     onChange={(event) => handleChange("paymentMethod", event.target.value)}
-                  />
+                  >
+                    <option>Cash on Delivery</option>
+                    <option>Credit Card</option>
+                    <option>Bank Transfer</option>
+                  </select>
                 </div>
               </div>
 

@@ -63,17 +63,17 @@ export function CartProvider({ children }) {
     syncCart();
   }, [isAuthenticated, user?.id]);
 
-  const addItem = async (gameId, quantity = 1) => {
+  const addItem = async (productId, quantity = 1) => {
     if (!user) {
-      throw new Error("Please log in to add games to your cart.");
+      throw new Error("Please log in to add products to your cart.");
     }
 
     try {
-      const { data } = await cartApi.add({ gameId, quantity });
+      const { data } = await cartApi.add({ productId, quantity });
       await refreshCart({ silent: true });
       return data;
     } catch (error) {
-      throw new Error(getApiErrorMessage(error, "Unable to add this game."));
+      throw new Error(getApiErrorMessage(error, "Unable to add this product."));
     }
   };
 

@@ -11,7 +11,7 @@ export const buildImageUrl = (imagePath) => {
     return "";
   }
 
-  if (imagePath.startsWith("http")) {
+  if (imagePath.startsWith("http") || imagePath.startsWith("data:")) {
     return imagePath;
   }
 

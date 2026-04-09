@@ -1,5 +1,5 @@
 const CartModel = require("../models/cartModel");
-const GameModel = require("../models/gameModel");
+const ProductModel = require("../models/productModel");
 
 const buildCartSummary = (items) => {
   const subtotal = items.reduce((sum, item) => sum + Number(item.line_total), 0);
@@ -14,11 +14,11 @@ const buildCartSummary = (items) => {
 const addToCart = async (req, res, next) => {
   try {
     const userId = req.user.id;
-    const gameId = Number(req.body.gameId);
+    const productId = Number(req.body.productId);
     const quantity = Number(req.body.quantity || 1);
 
-    if (!gameId || Number.isNaN(gameId)) {
-      return res.status(400).json({ message: "A valid game ID is required." });
+    if (!productId || Number.isNaN(productId)) {
+      return res.status(400).json({ message: "A valid product ID is required." });
     }
 
     if (!quantity || Number.isNaN(quantity) || quantity < 1) {
@@ -27,17 +27,17 @@ const addToCart = async (req, res, next) => {
         .json({ message: "Quantity must be at least 1." });
     }
 
-    const selectedGame = await GameModel.getGameById(gameId);
+    const selectedProduct = await ProductModel.getProductById(productId);
 
-    if (!selectedGame) {
-      return res.status(404).json({ message: "Game not found." });
+    if (!selectedProduct) {
+      return res.status(404).json({ message: "Product not found." });
     }
 
-    const item = await CartModel.addToCart({ userId, gameId, quantity });
+    const item = await CartModel.addToCart({ userId, productId, quantity });
     const cartItems = await CartModel.getCartByUserId(userId);
 
     res.status(201).json({
-      message: `${selectedGame.title} added to cart.`,
+      message: `${selectedProduct.title} added to cart.`,
       item,
       summary: buildCartSummary(cartItems),
     });

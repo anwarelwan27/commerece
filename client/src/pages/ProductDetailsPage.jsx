@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { Minus, Plus, ShoppingCart, Star } from "lucide-react";
+import { Minus, Plus, ShoppingCart, Star, Truck } from "lucide-react";
 import { toast } from "react-toastify";
-import { gamesApi, getApiErrorMessage } from "../api/apiClient";
+import { productsApi, getApiErrorMessage } from "../api/apiClient";
 import { useAuth } from "../contexts/AuthContext";
 import { useCart } from "../contexts/CartContext";
 import LoadingSpinner from "../components/common/LoadingSpinner";
 import EmptyState from "../components/common/EmptyState";
 import { buildImageUrl, formatCurrency, formatRating } from "../utils/helpers";
 
-function GameDetailsPage() {
+function ProductDetailsPage() {
   const { id } = useParams();
-  const [game, setGame] = useState(null);
+  const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
   const [quantity, setQuantity] = useState(1);
@@ -21,38 +21,38 @@ function GameDetailsPage() {
   const { addItem } = useCart();
 
   useEffect(() => {
-    const fetchGame = async () => {
+    const fetchProduct = async () => {
       setIsLoading(true);
 
       try {
-        const { data } = await gamesApi.getById(id);
-        setGame(data);
+        const { data } = await productsApi.getById(id);
+        setProduct(data);
         setErrorMessage("");
       } catch (error) {
-        setErrorMessage(getApiErrorMessage(error, "Unable to load game details."));
+        setErrorMessage(getApiErrorMessage(error, "Unable to load product details."));
       } finally {
         setIsLoading(false);
       }
     };
 
-    fetchGame();
+    fetchProduct();
   }, [id]);
 
   const handleAddToCart = async () => {
-    if (!game) {
+    if (!product) {
       return;
     }
 
     if (!isAuthenticated) {
-      toast.info("Please log in before adding games to your cart.");
-      navigate("/login", { state: { from: `/games/${game.id}` } });
+      toast.info("Please log in before adding products to your cart.");
+      navigate("/login", { state: { from: `/products/${product.id}` } });
       return;
     }
 
     setIsAdding(true);
 
     try {
-      const response = await addItem(game.id, quantity);
+      const response = await addItem(product.id, quantity);
       toast.success(response.message);
     } catch (error) {
       toast.error(error.message);
@@ -62,17 +62,17 @@ function GameDetailsPage() {
   };
 
   if (isLoading) {
-    return <LoadingSpinner label="Loading game details..." />;
+    return <LoadingSpinner label="Loading product details..." />;
   }
 
-  if (errorMessage || !game) {
+  if (errorMessage || !product) {
     return (
       <section className="section-shell pb-16">
         <EmptyState
-          title="Game not found."
-          description={errorMessage || "The requested game does not exist in the database."}
+          title="Product not found."
+          description={errorMessage || "The requested product does not exist in the database."}
           actionLabel="Back to Catalog"
-          actionTo="/games"
+          actionTo="/products"
         />
       </section>
     );
@@ -81,47 +81,47 @@ function GameDetailsPage() {
   return (
     <section className="section-shell pb-16">
       <div className="mb-6 text-sm text-[color:var(--text-muted)]">
-        <Link to="/games" className="hover:text-[color:var(--text-primary)]">
-          Games
+        <Link to="/products" className="hover:text-[color:var(--text-primary)]">
+          Products
         </Link>{" "}
-        / {game.title}
+        / {product.title}
       </div>
 
       <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
         <div className="surface-card overflow-hidden p-4">
           <img
-            src={buildImageUrl(game.image)}
-            alt={game.title}
+            src={buildImageUrl(product.image)}
+            alt={product.title}
             className="h-full max-h-[720px] w-full rounded-[2rem] object-cover"
           />
         </div>
 
         <div className="surface-card p-6 sm:p-8">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="rounded-full bg-sky-400/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-sky-300">
-              {game.category}
+            <span className="rounded-full bg-cyan-400/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">
+              {product.category}
             </span>
             <span className="flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-sm text-amber-300">
               <Star size={16} fill="currentColor" />
-              {formatRating(game.rating)}
+              {formatRating(product.rating)}
             </span>
           </div>
 
-          <h1 className="mt-6 text-4xl font-semibold text-[color:var(--text-primary)]">{game.title}</h1>
-          <p className="mt-5 text-base leading-8 text-[color:var(--text-secondary)]">{game.description}</p>
+          <h1 className="mt-6 text-4xl font-semibold text-[color:var(--text-primary)]">{product.title}</h1>
+          <p className="mt-5 text-base leading-8 text-[color:var(--text-secondary)]">{product.description}</p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             <div className="surface-muted p-4">
-              <p className="text-sm uppercase tracking-[0.2em] text-[color:var(--text-muted)]">Delivery</p>
-              <p className="mt-2 font-semibold text-[color:var(--text-primary)]">Instant Digital Access</p>
+              <p className="text-sm uppercase tracking-[0.2em] text-[color:var(--text-muted)]">Shipping</p>
+              <p className="mt-2 font-semibold text-[color:var(--text-primary)]">Fast local delivery</p>
             </div>
             <div className="surface-muted p-4">
-              <p className="text-sm uppercase tracking-[0.2em] text-[color:var(--text-muted)]">Platform</p>
-              <p className="mt-2 font-semibold text-[color:var(--text-primary)]">PC / Console Key</p>
+              <p className="text-sm uppercase tracking-[0.2em] text-[color:var(--text-muted)]">Warranty</p>
+              <p className="mt-2 font-semibold text-[color:var(--text-primary)]">Official 1-year support</p>
             </div>
             <div className="surface-muted p-4">
-              <p className="text-sm uppercase tracking-[0.2em] text-[color:var(--text-muted)]">Support</p>
-              <p className="mt-2 font-semibold text-[color:var(--text-primary)]">24/7 Help Desk</p>
+              <p className="text-sm uppercase tracking-[0.2em] text-[color:var(--text-muted)]">Store Care</p>
+              <p className="mt-2 font-semibold text-[color:var(--text-primary)]">Technical help included</p>
             </div>
           </div>
 
@@ -129,8 +129,12 @@ function GameDetailsPage() {
             <div>
               <p className="text-sm uppercase tracking-[0.25em] text-[color:var(--text-muted)]">Price</p>
               <p className="mt-2 text-4xl font-semibold text-[color:var(--text-primary)]">
-                {formatCurrency(game.price)}
+                {formatCurrency(product.price)}
               </p>
+              <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-2 text-sm text-[color:var(--text-secondary)]">
+                <Truck size={15} className="text-emerald-300" />
+                Ships in 1-2 business days
+              </div>
             </div>
 
             <div className="flex flex-col gap-3 sm:items-end">
@@ -171,4 +175,4 @@ function GameDetailsPage() {
   );
 }
 
-export default GameDetailsPage;
+export default ProductDetailsPage;

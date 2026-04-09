@@ -1,7 +1,7 @@
 {
-  "name": "clickmart-digital-games-store",
+  "name": "technova-store",
   "version": "1.0.0",
-  "description": "Full-stack digital games store built with React, Express, and MySQL.",
+  "description": "Full-stack electronics e-commerce store built with React, Express, and MySQL.",
   "private": true,
   "scripts": {
     "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
@@ -16,7 +16,7 @@
     "express",
     "mysql",
     "ecommerce",
-    "games-store"
+    "electronics-store"
   ],
   "author": "NASS Academy Student Project",
   "license": "ISC",

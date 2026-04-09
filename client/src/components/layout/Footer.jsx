@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { Gamepad2, Mail, ShieldCheck, Sparkles } from "lucide-react";
+import { Cpu, Headphones, ShieldCheck, Truck } from "lucide-react";
 
 function Footer() {
   return (
@@ -8,19 +8,19 @@ function Footer() {
         <div className="surface-card grid gap-8 px-6 py-8 lg:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
           <div>
             <div className="mb-4 flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-400/20 text-sky-300">
-                <Gamepad2 size={22} />
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-400/15 text-cyan-300">
+                <Cpu size={22} />
               </div>
               <div>
-                <p className="font-display text-lg tracking-[0.18em]">CLICKMART</p>
+                <p className="font-display text-lg tracking-[0.18em]">TECHNOVA</p>
                 <p className="text-sm text-[color:var(--text-muted)]">
-                  A polished digital marketplace built for modern players.
+                  Modern electronics for creators, students, and power users.
                 </p>
               </div>
             </div>
             <p className="max-w-xl text-sm leading-7 text-[color:var(--text-secondary)]">
-              Browse curated games, compare prices, discover top-rated titles, and enjoy a responsive shopping
-              experience designed with a clean gamer-first visual style.
+              TechNova Store combines clean product discovery, secure authentication, smart filtering, and a smooth
+              checkout experience in one responsive full-stack project.
             </p>
           </div>
 
@@ -32,34 +32,34 @@ function Footer() {
               <NavLink to="/" className="hover:text-[color:var(--text-primary)]">
                 Home
               </NavLink>
-              <NavLink to="/games" className="hover:text-[color:var(--text-primary)]">
-                Games
+              <NavLink to="/products" className="hover:text-[color:var(--text-primary)]">
+                Products
               </NavLink>
-              <NavLink to="/about" className="hover:text-[color:var(--text-primary)]">
-                About
+              <NavLink to="/cart" className="hover:text-[color:var(--text-primary)]">
+                Cart
               </NavLink>
-              <NavLink to="/contact" className="hover:text-[color:var(--text-primary)]">
-                Contact
+              <NavLink to="/checkout" className="hover:text-[color:var(--text-primary)]">
+                Checkout
               </NavLink>
             </div>
           </div>
 
           <div className="space-y-4">
             <div className="flex items-start gap-3">
-              <ShieldCheck className="mt-1 text-sky-300" size={18} />
+              <ShieldCheck className="mt-1 text-cyan-300" size={18} />
               <p className="text-sm text-[color:var(--text-secondary)]">
                 Secure login flow with protected cart and checkout routes.
               </p>
             </div>
             <div className="flex items-start gap-3">
-              <Sparkles className="mt-1 text-orange-300" size={18} />
+              <Truck className="mt-1 text-emerald-300" size={18} />
               <p className="text-sm text-[color:var(--text-secondary)]">
-                Smooth visual transitions, toasts, and user-friendly empty states.
+                Fast, responsive shopping flows with toasts, loaders, and empty states.
               </p>
             </div>
             <div className="flex items-start gap-3">
-              <Mail className="mt-1 text-sky-300" size={18} />
-              <p className="text-sm text-[color:var(--text-secondary)]">support@clickmart.com</p>
+              <Headphones className="mt-1 text-cyan-300" size={18} />
+              <p className="text-sm text-[color:var(--text-secondary)]">support@technovastore.dev</p>
             </div>
           </div>
         </div>

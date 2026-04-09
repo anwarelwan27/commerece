@@ -30,10 +30,10 @@ function RegisterPage() {
         <div className="surface-card px-6 py-10 sm:px-8">
           <p className="text-sm uppercase tracking-[0.3em] text-[color:var(--text-muted)]">Create Account</p>
           <h1 className="mt-4 text-4xl font-semibold text-[color:var(--text-primary)]">
-            Join ClickMart and start building your library.
+            Join TechNova and build your next setup.
           </h1>
           <p className="mt-4 text-base leading-8 text-[color:var(--text-secondary)]">
-            Registration stores your user in MySQL, returns a JWT token, and signs you in immediately.
+            Registration stores the user in MySQL, returns a JWT token, and signs the customer in immediately.
           </p>
         </div>
 
@@ -68,7 +68,7 @@ function RegisterPage() {
 
           <p className="mt-5 text-sm text-[color:var(--text-secondary)]">
             Already have an account?{" "}
-            <Link to="/login" className="font-semibold text-sky-300 hover:text-sky-200">
+            <Link to="/login" className="font-semibold text-cyan-300 hover:text-cyan-200">
               Login here
             </Link>
           </p>

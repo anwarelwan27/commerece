@@ -12,7 +12,7 @@ const requireAuth = (req, res, next) => {
   try {
     const decoded = jwt.verify(
       token,
-      process.env.JWT_SECRET || "clickmart-super-secret"
+      process.env.JWT_SECRET || "technova-super-secret"
     );
 
     req.user = decoded;

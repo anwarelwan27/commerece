@@ -8,7 +8,7 @@ function LoginPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const [formData, setFormData] = useState({
-    email: "demo@clickmart.com",
+    email: "demo@technova.com",
     password: "password123",
   });
 
@@ -19,7 +19,7 @@ function LoginPage() {
 
     try {
       await login(formData);
-      toast.success("Welcome back to ClickMart.");
+      toast.success("Welcome back to TechNova.");
       navigate(redirectTo, { replace: true });
     } catch (error) {
       toast.error(error.message);
@@ -38,7 +38,7 @@ function LoginPage() {
 
           <div className="surface-muted mt-8 space-y-2 p-5 text-sm text-[color:var(--text-secondary)]">
             <p>
-              <strong>Demo email:</strong> demo@clickmart.com
+              <strong>Demo email:</strong> demo@technova.com
             </p>
             <p>
               <strong>Password:</strong> password123
@@ -68,8 +68,8 @@ function LoginPage() {
           </button>
 
           <p className="mt-5 text-sm text-[color:var(--text-secondary)]">
-            New to ClickMart?{" "}
-            <Link to="/register" className="font-semibold text-sky-300 hover:text-sky-200">
+            New to TechNova?{" "}
+            <Link to="/register" className="font-semibold text-cyan-300 hover:text-cyan-200">
               Create an account
             </Link>
           </p>
